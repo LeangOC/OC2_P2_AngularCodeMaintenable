@@ -155,8 +155,56 @@ Une refactorisation sera nécessaire afin de :
   (Cela supprime les avantages de TypeScript)
   => Créer des interfaces TypeScript dans src/app/models : "export interface Participation"
 
+# Etape 2 - Proposition d’une nouvelle architecture front-end
 
+Suite à l’analyse du starter code, une nouvelle architecture est proposée afin de :
 
+  - améliorer la lisibilité du projet
+  - séparer les responsabilités
+  - respecter les bonnes pratiques Angular
+  - préparer l’intégration future d’une API backend.
 
+src/app
+│
+├── components/
+│   └── header/
+│       ├── header.component.ts
+│       ├── header.component.html
+│       └── header.component.scss
+│
+├── pages/
+│   ├── home/
+│   │   ├── home.component.ts
+│   │   ├── home.component.html
+│   │   └── home.component.scss
+│   │
+│   ├── country/
+│   │   ├── country.component.ts
+│   │   ├── country.component.html
+│   │   └── country.component.scss
+│   │
+│   └── not-found/
+│       ├── not-found.component.ts
+│       ├── not-found.component.html
+│       └── not-found.component.scss
+│
+├── services/
+│   └── data.service.ts
+│
+├── models/
+│   ├── olympic.model.ts
+│   └── participation.model.ts
+│
+├── app-routing.module.ts
+├── app.component.ts
+└── app.module.ts
 
-
+## Rôle de chaque dossier :
+- components/ :
+   Ce dossier contient les composants réutilisables dans plusieurs pages. 
+- pages/ :
+   Les pages représentent les écrans principaux de l’application.
+- services/ :
+  Ce dossier centralise l’accès aux données.
+- models/ :
+  Ce dossier contient les interfaces TypeScript représentant les données.
