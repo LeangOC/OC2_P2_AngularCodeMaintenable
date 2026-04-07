@@ -9,3 +9,9 @@ sauvegardée dans un fichier notes-architecture.md
 - Etape2 : Concevez une nouvelle architecture adaptée
   =>  Un schéma simple ou même une liste décrivant la nouvelle structure du front-end,
   accompagné d’explications dans notes-architecture.md 
+
+# dev3 
+- Etape3 : Refactorez les composants existants en appliquant l'architecture
+1. Implémenter : app/models/olympic.ts et app/models/participation.ts
+2. $ ng generate service services/olympic
+   => dev3_Services_Olympic.md
