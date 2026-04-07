@@ -7,9 +7,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { CountryComponent } from "./pages/country/country.component";
 import { HeaderComponent } from './components/header/header.component';
+import { MedalChartComponent } from './components/medal-chart/medal-chart.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NotFoundComponent, CountryComponent,HeaderComponent],
+  declarations: [AppComponent, HomeComponent, NotFoundComponent, CountryComponent,HeaderComponent,MedalChartComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent],

@@ -9,16 +9,17 @@ import { Olympic } from '../../models/olympic';
 })
 export class HomeComponent implements OnInit {
 
-  titlePage: string = 'Olympic Games';
-
-  totalCountries: number = 0;
-  totalJOs: number = 0;
+  titlePage = "Medals per Country";
 
   olympics: Olympic[] = [];
+
+  totalCountries = 0;
+  totalJOs = 0;
 
   constructor(private olympicService: OlympicService) {}
 
   ngOnInit(): void {
+
     this.olympicService.getOlympics().subscribe(data => {
 
       this.olympics = data;
@@ -34,7 +35,8 @@ export class HomeComponent implements OnInit {
       });
 
       this.totalJOs = joSet.size;
-    });
-  }
 
+    });
+
+  }
 }
