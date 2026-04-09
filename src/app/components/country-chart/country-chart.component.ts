@@ -1,4 +1,4 @@
-//import { Component, Input, OnInit } from '@angular/core';
+
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import Chart from 'chart.js/auto';
 
@@ -14,14 +14,9 @@ export class CountryChartComponent implements OnChanges {
 
   chart!: Chart;
 
-  /* ngOnInit(): void {
-    this.buildChart();
-  }*/
+
 
   ngOnChanges(changes: SimpleChanges): void {
-
-    console.log("Years reçus :", this.years);
-    console.log("Medals reçus :", this.medals);
 
     if (this.years && this.medals) {
       this.buildChart();
@@ -40,9 +35,7 @@ export class CountryChartComponent implements OnChanges {
         datasets: [{
           label: "Medals",
           data: this.medals,
-          borderColor: '#0b868f',
           backgroundColor: '#0b868f',
-          tension: 0.3
         }]
       },
       options: {

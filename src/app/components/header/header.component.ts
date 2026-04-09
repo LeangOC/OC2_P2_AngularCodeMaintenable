@@ -10,5 +10,6 @@ export class HeaderComponent {
   @Input() title!: string
   @Input() value1!: number
   @Input() value2!: number
+  @Input() value3!: number
 
 }
