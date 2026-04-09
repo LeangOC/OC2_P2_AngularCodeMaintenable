@@ -47,7 +47,8 @@ export class CountryComponent implements OnInit {
 
       this.years = participations.map(p => p.year);
       this.medals = participations.map(p => p.medalsCount);
-
+      console.log("YEARS:", this.years);
+      console.log("MEDALS:", this.medals);
       this.totalMedals = this.medals.reduce((a, b) => a + b, 0);
 
       const athletes = participations.map(p => p.athleteCount);
