@@ -15,3 +15,5 @@ sauvegardée dans un fichier notes-architecture.md
 1. Implémenter : app/models/olympic.ts et app/models/participation.ts
 2. $ ng generate service services/olympic
    => dev3_Services_Olympic.md
+
+# dev4 : refactoriser CountryComponent
