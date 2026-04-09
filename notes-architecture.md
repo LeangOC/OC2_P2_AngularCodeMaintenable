@@ -208,3 +208,14 @@ src/app
   Ce dossier centralise l’accès aux données.
 - models/ :
   Ce dossier contient les interfaces TypeScript représentant les données.
+
+
+Un Observable est un objet qui émet des données dans le temps :
+=> getOlympics(): Observable<Olympic[]> {return this.http.get<Olympic[]>('./assets/mock/olympic.json');}
+
+Subscribe : Pour recevoir les données d’un Observable, il faut s’abonner
+=> this.olympicService.getOlympics().subscribe(data => {this.olympics = data;});
+
+Un pipe permet de transformer les données d’un Observable avant de les recevoir.
+=> this.http.get<Olympic[]>(this.url).pipe(map(data => data.filter(country => country.medals > 0)))
+
