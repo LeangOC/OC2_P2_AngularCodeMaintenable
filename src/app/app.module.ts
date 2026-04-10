@@ -9,9 +9,10 @@ import { CountryComponent } from "./pages/country/country.component";
 import { HeaderComponent } from './components/header/header.component';
 import { MedalChartComponent } from './components/medal-chart/medal-chart.component';
 import { CountryChartComponent } from './components/country-chart/country-chart.component';
+import { HeaderCountryComponent } from './components/header-country/header-country.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NotFoundComponent, CountryComponent,HeaderComponent,MedalChartComponent,CountryChartComponent],
+  declarations: [AppComponent, HomeComponent, NotFoundComponent, CountryComponent,HeaderComponent,MedalChartComponent,CountryChartComponent,HeaderCountryComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent],

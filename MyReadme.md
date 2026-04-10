@@ -21,3 +21,7 @@ sauvegardée dans un fichier notes-architecture.md
 # dev5 : implémentation fonctionnalité clic vers country/pays
 
 # dev6 : imprémentation tracé courbe pays
+
+# dev7 : Refactorisation et ménage
+=> dev7_Refactorisation.md
+
