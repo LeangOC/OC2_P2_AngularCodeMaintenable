@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { OlympicService } from '../../services/olympic.service';
 import { Olympic } from '../../models/olympic';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-country',
@@ -22,37 +22,33 @@ export class CountryComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private olympicService: OlympicService
+    private olympicService: DataService
   ) {}
 
   ngOnInit(): void {
 
     const countryName = this.route.snapshot.paramMap.get('countryName');
 
-    this.olympicService.getOlympics().subscribe(data => {
+    if (!countryName) {
+      this.router.navigate(['not-found']);
+      return;
+    }
 
-      const selectedCountry = data.find(o => o.country === countryName);
+    this.olympicService.getCountryDetails(countryName).subscribe({
+      next: (data) => {
+        this.olympic = data.olympic;
+        this.titlePage = data.olympic.country;
 
-      if (!selectedCountry) {
+        this.totalEntries = data.totalEntries;
+        this.totalMedals = data.totalMedals;
+        this.totalAthletes = data.totalAthletes;
+
+        this.years = data.years;
+        this.medals = data.medals;
+      },
+      error: () => {
         this.router.navigate(['not-found']);
-        return;
       }
-
-      this.olympic = selectedCountry;
-      this.titlePage = selectedCountry.country;
-
-      const participations = selectedCountry.participations;
-
-      this.totalEntries = participations.length;
-
-      this.years = participations.map(p => p.year);
-      this.medals = participations.map(p => p.medalsCount);
-
-      this.totalMedals = this.medals.reduce((a, b) => a + b, 0);
-
-      const athletes = participations.map(p => p.athleteCount);
-      this.totalAthletes = athletes.reduce((a, b) => a + b, 0);
-
     });
 
   }
