@@ -21,21 +21,15 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
 
     this.olympicService.getOlympics().subscribe(data => {
-
       this.olympics = data;
-
       this.totalCountries = data.length;
-
       const joSet = new Set<number>();
-
       data.forEach(country => {
         country.participations.forEach(p => {
           joSet.add(p.year);
         });
       });
-
       this.totalJOs = joSet.size;
-
     });
 
   }
