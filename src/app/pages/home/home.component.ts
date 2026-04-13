@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { OlympicService } from '../../services/olympic.service';
+//import { OlympicService } from '../../services/olympic.service';
+import { DataService } from '../../services/data.service';
 import { Olympic } from '../../models/olympic';
 
 @Component({
@@ -16,20 +17,20 @@ export class HomeComponent implements OnInit {
   totalCountries = 0;
   totalJOs = 0;
 
-  constructor(private olympicService: OlympicService) {}
+  constructor(private olympicService: DataService) { }
 
   ngOnInit(): void {
 
     this.olympicService.getOlympics().subscribe(data => {
       this.olympics = data;
-      this.totalCountries = data.length;
-      const joSet = new Set<number>();
-      data.forEach(country => {
-        country.participations.forEach(p => {
-          joSet.add(p.year);
-        });
-      });
-      this.totalJOs = joSet.size;
+    });
+
+    this.olympicService.getTotalCountries().subscribe(count => {
+      this.totalCountries = count;
+    });
+
+    this.olympicService.getTotalJOs().subscribe(count => {
+      this.totalJOs = count;
     });
 
   }
