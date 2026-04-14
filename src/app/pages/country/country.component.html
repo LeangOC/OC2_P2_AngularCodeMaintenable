@@ -1,9 +1,18 @@
-<app-header-country
+<app-header
   [title]="titlePage"
-  [value1]="totalEntries"
-  [value2]="totalMedals"
-  [value3]="totalAthletes">
-</app-header-country>
+  [kpis]="[
+    { label: 'Entries', value: totalEntries },
+    { label: 'Total medals', value: totalMedals },
+    { label: 'Athletes', value: totalAthletes }
+  ]">
+</app-header>
+
+<!-- ✅ BOUTON RETOUR AU BON ENDROIT -->
+<div class="center">
+  <button routerLink="/" aria-label="Retour au dashboard">
+    ← Retour
+  </button>
+</div>
 
 <app-country-chart
   [years]="years"

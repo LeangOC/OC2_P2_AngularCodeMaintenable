@@ -3,10 +3,19 @@
 
 <app-header
   [title]="titlePage"
-  [value1]="totalCountries"
-  [value2]="totalJOs">
+  [kpis]="[
+    { label: 'Countries', value: totalCountries },
+    { label: 'JOs', value: totalJOs }
+  ]">
 </app-header>
 
+<!-- LOADING -->
+<div *ngIf="loading">Loading...</div>
+
+<!-- ERROR -->
+<div *ngIf="error">Error loading data</div>
+
 <app-medal-chart
+  *ngIf="!loading && !error"
   [olympics]="olympics">
 </app-medal-chart>

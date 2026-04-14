@@ -40,8 +40,16 @@ export class CountryChartComponent implements OnChanges {
       },
       options: {
         responsive: true,
-        maintainAspectRatio: false
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'bottom'
+          }
+        }
       }
+
+
+
 
     });
 

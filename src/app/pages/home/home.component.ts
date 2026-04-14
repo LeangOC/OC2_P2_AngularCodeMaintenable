@@ -16,14 +16,23 @@ export class HomeComponent implements OnInit {
 
   totalCountries = 0;
   totalJOs = 0;
+  loading = true;
+  error = false;
 
   constructor(private olympicService: DataService) { }
 
   ngOnInit(): void {
 
-    this.olympicService.getOlympics().subscribe(data => {
-      this.olympics = data;
-    });
+    this.olympicService.getOlympics().subscribe({
+      next: data => {
+        this.olympics = data;
+        this.loading = false;
+      },
+      error: () => {
+        this.error = true;
+        this.loading = false;
+      }
+     });
 
     this.olympicService.getTotalCountries().subscribe(count => {
       this.totalCountries = count;

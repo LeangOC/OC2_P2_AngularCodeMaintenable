@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core'
+import {KPI} from '../../models/kpi';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,7 @@ import { Component, Input } from '@angular/core'
 })
 export class HeaderComponent {
 
-  @Input() title!: string
-  @Input() value1!: number
-  @Input() value2!: number
-  @Input() value3!: number
+  @Input() title!: string;
+  @Input() kpis: KPI[] = [];
 
 }
