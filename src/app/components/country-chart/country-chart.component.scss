@@ -4,3 +4,8 @@
   height: 400px;
   margin: 20px auto;
 }
+.centerme {
+  display: flex;
+  justify-content: center;
+  margin-top: -20px; /* remonte la ligne */
+}

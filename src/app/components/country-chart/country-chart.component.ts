@@ -43,12 +43,16 @@ export class CountryChartComponent implements OnChanges {
         maintainAspectRatio: false,
         plugins: {
           legend: {
-            position: 'bottom'
+            position: 'top',
+            labels: {
+              color: '#333',
+              font: {
+                size: 14
+              }
+            }
           }
         }
       }
-
-
 
 
     });

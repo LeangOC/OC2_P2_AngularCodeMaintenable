@@ -7,14 +7,14 @@
   ]">
 </app-header>
 
+<app-country-chart
+  [years]="years"
+  [medals]="medals">
+</app-country-chart>
+
 <!-- ✅ BOUTON RETOUR AU BON ENDROIT -->
 <div class="center">
   <button routerLink="/" aria-label="Retour au dashboard">
     ← Retour
   </button>
 </div>
-
-<app-country-chart
-  [years]="years"
-  [medals]="medals">
-</app-country-chart>
