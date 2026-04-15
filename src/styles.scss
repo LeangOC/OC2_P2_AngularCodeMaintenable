@@ -50,6 +50,7 @@
 
 .container {
   width: 90%;
+  max-width: 500px; /* ✅ clé pour mobile */
   margin: auto;
 }
 
