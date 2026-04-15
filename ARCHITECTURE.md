@@ -15,6 +15,7 @@
 |   +---components  
 |   |   +---country-chart  
 |   |   +---header  
+|   |   +---header-country  
 |   |   /---medal-chart  
 |   +---models  
 |   +---pages  
@@ -44,11 +45,12 @@ Dans components/ :
 - medal-chart:  
   Affiche le nombre de médailles par pays sous forme graphique  
   Utilisé dans la page pages/home  
-- header  
-  Affiche le titre,le nombre de pays,le nombre de jeux olympique,le nombre de jeux olympiques,  
-  le nombre total des médails, et le nombre total des athlètes  
-  Utilisé dans la page pages/home et la page pages/country  
-  
+  - header  
+  Affiche le titre,le nombre de pays,le nombre de jeux olympique.
+    Utilisé dans la page pages/home
+  - header-country
+    Affiche le titre,le nombre de jeux olympiques,le nombre total des médails, et le nombre total des athlètes.
+    Utilisé dans la page pages/country
 
 3. Le service Angular et son rôle
 Dans services/ :
@@ -59,6 +61,6 @@ Le service ici sert à centraliser la logique métier et les données:
 - gérer la logique métier (transformations, filtres, etc.)  
 
 Conclusion : 
-La nouvelle architecture est prête pour passer en API : 
+Mon architecture est prêt pour passer en API : 
 - Remplacer les données mock par des appels HTTP (HttpClient)
 - Sans modifier les composants ni les pages.
