@@ -1,0 +1,30 @@
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.logo-container img {
+  width: 100%;
+  max-width: 200px; /* taille desktop */
+  height: auto;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .logo-container img {
+    max-width: 150px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .logo-container img {
+    max-width: 120px;
+  }
+}
+
+.title {
+  text-align: center;
+  margin-top: 0;
+}
