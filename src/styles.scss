@@ -62,12 +62,14 @@
 
 /* Mobile */
 @media (max-width: 767px) {
-  .chart-container {
-    height: 250px;
+  .split {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
   }
 
-  .split {
-    flex-direction: column;
-    align-items: center;
+  .split div {
+    flex: 1 1 45%;
+    max-width: 150px;
   }
 }
